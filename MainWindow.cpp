@@ -3,6 +3,7 @@
  *
  * (c) 2013 Sofian Audry -- info(@)sofianaudry(.)com
  * (c) 2013 Alexandre Quessy -- alexandre(@)quessy(.)net
+ * (c) 2014 Dame Diongue -- baydamd(@)gmail(.)com
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1663,6 +1664,10 @@ void MainWindow::readSettings()
   {
     displayOutputWindow->setChecked(settings.value("displayTestSignal").toBool());
   }
+  if (settings.contains("displayCanvasControls"))
+  {
+    displayCanvasControls->setChecked(settings.value("displayCanvasControls").toBool());
+  }
   config_osc_receive_port = settings.value("osc_receive_port", 12345).toInt();
 
   // Update Recent files and video
@@ -1683,6 +1688,7 @@ void MainWindow::writeSettings()
   settings.setValue("displayOutputWindow", displayOutputWindow->isChecked());
   settings.setValue("outputWindowFullScreen", outputWindowFullScreen->isChecked());
   settings.setValue("displayTestSignal", displayTestSignal->isChecked());
+  settings.setValue("displayCanvasControls", displayCanvasControls->isChecked());
   settings.setValue("osc_receive_port", config_osc_receive_port);
 }
 
