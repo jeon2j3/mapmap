@@ -252,6 +252,14 @@ void OscInterface::applyOscCommand(MainWindow &main_window, QVariantList & comma
     int enable = command.at(2).toInt();
     main_window.setOutputWindowFullScreen(enable == 1 ? true : false);
   }
+  else if (path == "/mapmap/mapping/vertice/position" && typetags == "iiff")
+  {
+    int mappingId = command.at(2).toInt();
+    int verticeId = command.at(3).toInt();
+    float positionX = command.at(4).toDouble();
+    float positionY = command.at(5).toDouble();
+    main_window.setVerticePosition(mappingId, verticeId, positionX, positionY);
+  }
   else if (path == "/mapmap/quit")
   {
     main_window.quitMapMap();

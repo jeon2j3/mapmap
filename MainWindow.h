@@ -190,6 +190,7 @@ public:
   bool setTextureRate(int texture_id, double rate);
   bool setTextureVolume(int texture_id, double volume);
   void setTexturePlayState(int texture_id, bool played);
+  void setVerticePosition(int mappingId, int verticeId, float posX, float posY);
 
 private:
   // Internal methods. //////////////////////////////////////////////////////////////////////////////////////

@@ -2588,7 +2588,15 @@ void MainWindow::setTexturePlayState(int texture_id, bool played)
     {
       std::cout << "Paint id " << texture_id << " is not a media texture." << std::endl;
     }
-  }
+    }
+}
+
+void MainWindow::setVerticePosition(int mappingId, int verticeId, float posX, float posY)
+{
+  Mapping::ptr mapping = mappingManager->getMappingById(mappingId);
+
+  QPoint vertexPosition(posX, posY);
+  mapping->getShape()->setVertex(verticeId, vertexPosition);
 }
 
 void MainWindow::quitMapMap()
